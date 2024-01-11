@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define T 100 //T를 100으로 정의 
+
+int main(int argc, char *argv[]) {
+	
+	srand(time(NULL));//랜덤 값 
+	 
+	int data[T];
+	int i,j,min,temp,n;
+	
+	printf("데이터 수 : ");
+	scanf("%d",&n);
+	
+	for(i = 0; i < n; i++) data[i] = rand() % T+1;//t+1은 1~100까지의 랜덤값 
+	
+	for(i = 0; i < n; i++){
+		min = i;//임의의 작은 수의 위치로 맨앞에 있는 것을 저장 
+		for(j = i + 1; j < n; j++){//앞에 있는 수는 정렬되었기에 i+1부터 시작 
+			if(data[j] < data[min])
+			min = j;
+		}//가장 작은 수의 위치 저장 
+		temp = data[i];
+		data[i] = data[min];
+		data[min] = temp; //가장 작은 수의 위치를 차례대로 정렬 
+	}
+	
+	for(i = 0; i < n; i++) printf("%d ", data[i]);
+	
+	return 0;
+}
