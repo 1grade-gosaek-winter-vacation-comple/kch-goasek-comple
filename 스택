@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define STACK_SIZE 7//STACK_SIZE를 기호상수로 사용하겠다. 
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int stack[STACK_SIZE];
+int sp=-1;
+
+void pop() {
+	if(sp==-1){
+		printf("stack is empty\n");
+		return 0;
+	}
+	printf("%d\n",stack[sp--]);
+}
+
+void push(int item) {
+	if(sp==STACK_SIZE-1){
+	printf("full\n");
+	return 0;
+	}//(sp==STACK_SIZE-1) = ISFULL()
+	stack[++sp] = item;
+}
+
+int main(int argc, char *argv[]) { 
+	int x;
+	char sel;
+	
+	do{
+		scanf("%c",&sel);
+		switch(sel){
+			case 'p':
+				scanf("%d",&x);
+				push(x);
+				break;
+			case 'd':
+				scanf("%d",&x);
+				pop();
+			}
+			
+	}while(sel!='q');
+		printf("---Stack END---\n");
+	// do{...}while(...);코드는 처음에 while문의 조건을 확인하지 않고 1번은 반복함 
+	
+	return 0;
+}
