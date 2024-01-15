@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef struct data{
+	int num;
+	char name[10];
+	double avg;/*double == long float*/
+}stu;
+
+
+int main(int argc, char *argv[]) { 
+	stu student;
+	scanf("%d",&student.num);
+	scanf("%s",&student.name);
+	scanf("%lf",&student.avg);
+	
+	printf("%d ",student.num);
+	printf("%s ",student.name);
+	printf("%lf ",student.avg);
+	
+	return 0;
+}
