@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+	int a[10]={4,8,4,9,1,6,3,5,7,10}, *ap;
+	int i;
+	ap=a;
+	for(i=0;i<10;i++){
+		printf("%d ",*(ap+i));//*(ap+i) = *(ap+4) ap의 자료형에 따라 더하는 값이 달라짐 
+	}
+	return 0;
+}
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+#include <stdio.h>
+#include <stdlib.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) { 
+	int a[10]={4,8,4,9,1,6,3,5,7,10}, *ap;
+	ap=a;
+	printf("a의 주소: %p\n",a);
+	printf("a의 주소: %p\n",&a[0]);
+	printf("a의 주소: %p\n",&a[1]);
+	printf("a의 주소: %p\n",&a[2]);
+	
+	printf("ap의 주소: %p\n",&ap);
+	printf("ap의 포인터: %p\n",*ap);
+	return 0;
+}
