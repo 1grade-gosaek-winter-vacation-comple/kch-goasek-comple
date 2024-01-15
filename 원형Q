@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define Q_SIZE 7//STACK_SIZE를 기호상수로 사용하겠다. 
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int front=0,rear=0;
+int q[Q_SIZE];
+int delet() {
+	if(front == rear)
+	{
+		printf("Q is empty\n");
+		return 0;
+	}
+	q[(++rear)%Q_SIZE] = 0;
+}
+
+int insert(int item) {
+	if((front+1)%Q_SIZE==rear){
+		printf("Q is full");
+		return 0;
+	}
+	q[(++front)%Q_SIZE] = item;
+}
+
+int main(int argc, char *argv[]) { 
+	int x;
+	char sel;
+	
+	do{
+		scanf("%c",&sel);
+		switch(sel){
+			case 'i':
+				scanf("%d",&x);
+				insert(x);
+				break;
+			case 'd':
+				delet();
+				break;
+			}
+			
+	}while(sel!='q');
+		printf("---Stack END---\n");
+	// do{...}while(...);코드는 처음에 while문의 조건을 확인하지 않고 1번은 반복함 
+	
+	return 0;
+}
