@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+typedef struct data{
+	int num;
+	double avg;/*double == long float*/
+}stu;
+
+
+int main(int argc, char *argv[]) { 
+	srand(time(NULL));
+	int n,l=-1,s=1000;
+	scanf("%d",&n);
+	stu student[1000];
+	int i;
+	for(i=0;i<n;i++){
+	student[i].num = i+1;
+	student[i].avg = rand()%101;
+	}
+	
+	for(i=0;i<n;i++){
+		if(student[i].avg>l){
+			l=i;
+		}
+		else if(student[i].avg<s){
+			s=i;
+		}
+	}
+	
+	printf("최대// 번호: %d 점수%lf\n",student[l].num, student[l].avg);
+	printf("최소// 번호: %d 점수%lf\n",student[s].num, student[s].avg);
+	
+	
+	return 0;
+}
