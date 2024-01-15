@@ -9,20 +9,20 @@ typedef struct data{
 
 int main(int argc, char *argv[]) { 
 	srand(time(NULL));
-	int n,l=-1,s=1000;
+	int n,l=-1,s=101;
 	scanf("%d",&n);
 	stu student[1000];
 	int i;
-	for(i=0;i<n;i++){
-	student[i].num = i+1;
+	for(i=1;i<=n;i++){
+	student[i].num = i;
 	student[i].avg = rand()%101;
 	}
 	
-	for(i=0;i<n;i++){
+	for(i=1;i<=n;i++){
 		if(student[i].avg>l){
 			l=i;
 		}
-		else if(student[i].avg<s){
+		if(student[i].avg<s){
 			s=i;
 		}
 	}
